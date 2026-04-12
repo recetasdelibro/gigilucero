@@ -250,8 +250,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     overflow: hidden;
     background-color: white;
@@ -296,6 +296,77 @@ body {
     -moz-box-shadow: none;
 }
 
+/* Email Form Styles */
+.email-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF69B4;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #FF69B4;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #ff1493;
+}
+
+.status-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    transition: all 0.3s ease;
+}
+
 /* Mobile Styles for Social Icons */
 @media (max-width: 767px) {
     .social-icons {
@@ -307,16 +378,26 @@ body {
     }
     
     .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .social-item:first-child .social-icon {
         width: 50px;
         height: 50px;
     }
     
+    .social-item:first-child .social-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
     .social-label {
         font-size: 16px;
+    }
+    
+    .email-form-container {
+        margin: 0 10px;
+        padding: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
     }
 }

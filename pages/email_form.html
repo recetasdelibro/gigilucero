@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Header space -->
+    <div class="header-space">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <div class="nav-content">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="feria.html">Feria Gigi</a></li>
+                <li><a href="cupones.html">Cupones descuento</a></li>
+                <li><a href="mercado_libre.html">Mercado libre</a></li>
+                <li><a href="locales.html">Locales Flores</a></li>
+                <li><a href="contact.html">Contactanos</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Content -->
+    <div class="content">
+        <h1>CONTACTO POR EMAIL</h1>
+        
+        <!-- Email Form -->
+        <div class="email-form-container">
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Tu Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar Email</button>
+            </form>
+        </div>
+        
+        <div id="status-message" class="status-message"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="../js/script.js"></script>
+<script>
+    (function() {
+        // Initialize EmailJS with your actual credentials
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+        
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_name: 'Gigi Lucero',
+                to_email: 'gigilucero.prop@gmail.com'
+            };
+            
+            const statusMessage = document.getElementById('status-message');
+            statusMessage.textContent = 'Enviando...';
+            statusMessage.style.display = 'block';
+            statusMessage.style.color = '#FF69B4';
+            
+            // Use EmailJS send method with proper parameters
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    statusMessage.textContent = '¡Email enviado con éxito!';
+                    statusMessage.style.color = '#28a745';
+                    document.getElementById('emailForm').reset();
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    statusMessage.textContent = 'Error al enviar email. Por favor intenta de nuevo.';
+                    statusMessage.style.color = '#dc3545';
+                });
+        });
+    })();
+</script>
+</body>
+</html>
