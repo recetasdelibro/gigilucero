@@ -155,7 +155,7 @@ body {
 
 /* Pink Bar Styles */
 .pink-bar {
-    background-color: #FF69B4;
+    background-color: #E2725B;
     color: white;
     padding: 15px 0;
     font-size: 16px;
@@ -163,25 +163,28 @@ body {
     letter-spacing: 1px;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 }
 
 .carousel-content {
     display: flex;
-    animation: carousel 10s linear infinite;
+    animation: carousel 20s linear infinite;
+    width: fit-content;
 }
 
 .carousel-text {
     display: inline-block;
     padding: 0 50px;
     font-style: normal;
+    white-space: nowrap;
 }
 
 @keyframes carousel {
     0% {
-        transform: translate(0, 0);
+        transform: translateX(0);
     }
     100% {
-        transform: translate(-50%, 0);
+        transform: translateX(-50%);
     }
 }
 
@@ -239,10 +242,51 @@ body {
     
     .welcome-text p {
         font-size: 16px;
+        line-height: 1.5;
     }
     
     .intro-image {
         max-width: 250px;
+    }
+    
+    /* Safari/iOS specific fixes */
+    .nav-menu {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    
+    .nav-menu.active {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    
+    /* Fix for iOS Safari viewport height */
+    .header-space {
+        height: 80px;
+        min-height: 80px;
+    }
+    
+    /* Improve touch targets */
+    .menu-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* Fix for mobile scrolling */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    
+    /* Pink bar mobile fixes */
+    .pink-bar {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+    
+    .carousel-text {
+        padding: 0 30px;
+        font-size: 14px;
     }
 }
 
