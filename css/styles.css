@@ -153,6 +153,38 @@ body {
     display: block;
 }
 
+/* Pink Bar Styles */
+.pink-bar {
+    background-color: #FF69B4;
+    color: white;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.carousel-content {
+    display: flex;
+    animation: carousel 10s linear infinite;
+}
+
+.carousel-text {
+    display: inline-block;
+    padding: 0 50px;
+    font-style: normal;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
 /* Welcome Section Styles */
 .welcome-section {
     padding: 40px 20px;
