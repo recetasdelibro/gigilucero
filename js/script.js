@@ -1,3 +1,10 @@
+// Initialize Supabase client
+const { createClient } = supabase;
+const supabaseClient = createClient(
+    'YOUR_SUPABASE_URL', // Replace with your Supabase URL
+    'YOUR_SUPABASE_ANON_KEY' // Replace with your Supabase anon key
+);
+
 // Navigation menu functionality
 function toggleMenu() {
     const navMenu = document.getElementById('navMenu');
@@ -56,5 +63,78 @@ document.addEventListener('keydown', function(event) {
         if (navMenu.classList.contains('active')) {
             toggleMenu();
         }
+    }
+});
+
+// Fuzzy search functionality
+async function searchRecipes(searchTerm) {
+    try {
+        const { data, error } = await supabaseClient
+            .rpc('buscar_recetas_fuzzy', { 
+                search_term: searchTerm 
+            });
+        
+        if (error) {
+            console.error('Error searching recipes:', error);
+            return [];
+        }
+        
+        if (data) {
+            console.log(data);
+            return data;
+        }
+        
+        return [];
+    } catch (error) {
+        console.error('Error in searchRecipes:', error);
+        return [];
+    }
+}
+
+// Display search results
+function displaySearchResults(results) {
+    const searchResultsDiv = document.getElementById('searchResults');
+    
+    if (!results || results.length === 0) {
+        searchResultsDiv.innerHTML = '<p class="no-results">No se encontraron recetas.</p>';
+        return;
+    }
+    
+    const resultsHTML = results.map(recipe => `
+        <div class="recipe-card">
+            <h3 class="recipe-title">${recipe.nombre || recipe.title || 'Sin título'}</h3>
+            <p class="recipe-description">${recipe.descripcion || recipe.description || 'Sin descripción'}</p>
+            ${recipe.ingredientes ? `<p class="recipe-ingredients"><strong>Ingredientes:</strong> ${recipe.ingredientes}</p>` : ''}
+        </div>
+    `).join('');
+    
+    searchResultsDiv.innerHTML = resultsHTML;
+}
+
+// Initialize search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    
+    if (searchInput && searchBtn) {
+        // Search on button click
+        searchBtn.addEventListener('click', async function() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                const results = await searchRecipes(searchTerm);
+                displaySearchResults(results);
+            }
+        });
+        
+        // Search on Enter key
+        searchInput.addEventListener('keypress', async function(event) {
+            if (event.key === 'Enter') {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    const results = await searchRecipes(searchTerm);
+                    displaySearchResults(results);
+                }
+            }
+        });
     }
 });
