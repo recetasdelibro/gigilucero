@@ -157,8 +157,8 @@ body {
 .pink-bar {
     background-color: #967C5C;
     color: black;
-    padding: 8px 0;
-    font-size: 16px;
+    padding: 4px 0;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
     overflow: hidden;
@@ -280,8 +280,8 @@ body {
     
     /* Pink bar mobile fixes */
     .pink-bar {
-        font-size: 14px;
-        padding: 8px 0;
+        font-size: 12px;
+        padding: 4px 0;
     }
     
     .carousel-text {
