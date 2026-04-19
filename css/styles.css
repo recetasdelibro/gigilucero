@@ -528,8 +528,6 @@ footer p {
 .product-item img {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 10px;
@@ -550,10 +548,7 @@ footer p {
         padding: 15px 0;
     }
     
-    .product-item img {
-        max-height: 200px;
-    }
-    
+        
     .product-item h3 {
         font-size: 14px;
     }
