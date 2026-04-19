@@ -65,51 +65,7 @@
         <div id="status-message" class="status-message"></div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="../js/script.js"></script>
-<script>
-    (function() {
-        // Initialize EmailJS with your actual credentials
-        emailjs.init("PUBLIC_KEY"); // Replace with your actual public key
-        
-        document.getElementById('emailForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const userName = document.getElementById('name').value;
-            const userEmail = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const userMessage = document.getElementById('message').value;
-            
-            const formData = {
-                from_name: userName,
-                from_email: userEmail,
-                subject: subject,
-                title: subject,
-                message: `Mensaje de: ${userName} (${userEmail})\n\n${userMessage}`,
-                to_name: 'Gigi Lucero',
-                to_email: 'gigilucero.prop@gmail.com'
-            };
-            
-            const statusMessage = document.getElementById('status-message');
-            statusMessage.textContent = 'Enviando...';
-            statusMessage.style.display = 'block';
-            statusMessage.style.color = '#FF69B4';
-            
-            // Use EmailJS send method with proper parameters
-            emailjs.send("SERVICE", "TEMPLATE", formData) // Update service_xk0ocxd if you create new service
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    statusMessage.textContent = '¡Email enviado con éxito!';
-                    statusMessage.style.color = '#28a745';
-                    document.getElementById('emailForm').reset();
-                })
-                .catch(function(error) {
-                    console.log('FAILED...', error);
-                    statusMessage.textContent = 'Error al enviar email. Por favor intenta de nuevo.';
-                    statusMessage.style.color = '#dc3545';
-                });
-        });
-    })();
-</script>
+    <script src="../js/script.js"></script>
+    <script src="../js/email.js"></script>
 </body>
 </html>
