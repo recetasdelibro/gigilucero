@@ -505,3 +505,63 @@ footer p {
     font-size: 14px;
     font-weight: 500;
 }
+
+/* Products Grid Styles */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.product-item {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Mobile Responsive for Products Grid */
+@media (max-width: 767px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .product-item img {
+        max-height: 200px;
+    }
+    
+    .product-item h3 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

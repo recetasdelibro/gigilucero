@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Body Alis",
+    "image_path": "assets/images/ventas/body_alis.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Camisa oversize BILLABONG",
+    "image_path": "assets/images/ventas/camisa_billabong.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Camisaco BILLABONG",
+    "image_path": "assets/images/ventas/camisaco_billabong.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Mono marrón",
+    "image_path": "assets/images/ventas/mono_marron.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "Musculosa hilo",
+    "image_path": "assets/images/ventas/musculosa_hilo.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Remera animal print",
+    "image_path": "assets/images/ventas/remera_animal_print.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "Sweater",
+    "image_path": "assets/images/ventas/sweater.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "Sweater liviano H&M",
+    "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg"
+  }
+]
