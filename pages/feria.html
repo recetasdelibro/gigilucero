@@ -58,12 +58,13 @@ async function loadProducts() {
         const productsGrid = document.getElementById('productsGrid');
         
         products.forEach(product => {
-            const productItem = document.createElement('a');
-            productItem.href = 'producto_feria.html';
+            const productItem = document.createElement('div');
             productItem.className = 'product-item';
             
             productItem.innerHTML = `
-                <img src="../${product.image_path}" alt="${product.title}">
+                <a href="producto_feria.html">
+                    <img src="../${product.image_path}" alt="${product.title}">
+                </a>
                 <h3>${product.title}</h3>
             `;
             
