@@ -62,7 +62,7 @@ async function loadProducts() {
             productItem.className = 'product-item';
             
             productItem.innerHTML = `
-                <a href="producto_feria.html">
+                <a href="producto_feria.html?id=${product.id}">
                     <img src="../${product.image_path}" alt="${product.title}">
                 </a>
                 <h3>${product.title}</h3>

@@ -1,10 +1,3 @@
-// Initialize Supabase client
-const { createClient } = supabase;
-const supabaseClient = createClient(
-    'YOUR_SUPABASE_URL', // Replace with your Supabase URL
-    'YOUR_SUPABASE_ANON_KEY' // Replace with your Supabase anon key
-);
-
 // Navigation menu functionality
 function toggleMenu() {
     const navMenu = document.getElementById('navMenu');
@@ -66,75 +59,48 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Fuzzy search functionality
-async function searchRecipes(searchTerm) {
+// Load product data from feria.json
+async function loadProductData() {
     try {
-        const { data, error } = await supabaseClient
-            .rpc('buscar_recetas_fuzzy', { 
-                search_term: searchTerm 
-            });
+        const response = await fetch('../assets/feria.json');
+        const products = await response.json();
         
-        if (error) {
-            console.error('Error searching recipes:', error);
-            return [];
+        // Get product ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id')) || 1;
+        
+        // Find the product
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+            displayProduct(product);
+        } else {
+            document.querySelector('.content').innerHTML = '<p>Producto no encontrado</p>';
         }
-        
-        if (data) {
-            console.log(data);
-            return data;
-        }
-        
-        return [];
     } catch (error) {
-        console.error('Error in searchRecipes:', error);
-        return [];
+        console.error('Error loading product data:', error);
+        document.querySelector('.content').innerHTML = '<p>Error al cargar el producto</p>';
     }
 }
 
-// Display search results
-function displaySearchResults(results) {
-    const searchResultsDiv = document.getElementById('searchResults');
+// Display product information
+function displayProduct(product) {
+    const contentDiv = document.querySelector('.content');
     
-    if (!results || results.length === 0) {
-        searchResultsDiv.innerHTML = '<p class="no-results">No se encontraron recetas.</p>';
-        return;
-    }
+    // The image_path already includes "assets/", so we just need "../" prefix
+    const imagePath = "../" + product.image_path;
     
-    const resultsHTML = results.map(recipe => `
-        <div class="recipe-card">
-            <h3 class="recipe-title">${recipe.nombre || recipe.title || 'Sin título'}</h3>
-            <p class="recipe-description">${recipe.descripcion || recipe.description || 'Sin descripción'}</p>
-            ${recipe.ingredientes ? `<p class="recipe-ingredients"><strong>Ingredientes:</strong> ${recipe.ingredientes}</p>` : ''}
+    contentDiv.innerHTML = `
+        <div class="product-detail">
+            <h1>${product.title}</h1>
+            <div class="product-image-container">
+                <img src="${imagePath}" alt="${product.title}" class="product-large-image">
+            </div>
         </div>
-    `).join('');
-    
-    searchResultsDiv.innerHTML = resultsHTML;
+    `;
 }
 
-// Initialize search functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-    
-    if (searchInput && searchBtn) {
-        // Search on button click
-        searchBtn.addEventListener('click', async function() {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                const results = await searchRecipes(searchTerm);
-                displaySearchResults(results);
-            }
-        });
-        
-        // Search on Enter key
-        searchInput.addEventListener('keypress', async function(event) {
-            if (event.key === 'Enter') {
-                const searchTerm = searchInput.value.trim();
-                if (searchTerm) {
-                    const results = await searchRecipes(searchTerm);
-                    displaySearchResults(results);
-                }
-            }
-        });
-    }
-});
+// Initialize product page
+if (window.location.pathname.includes('producto_feria.html')) {
+    document.addEventListener('DOMContentLoaded', loadProductData);
+}

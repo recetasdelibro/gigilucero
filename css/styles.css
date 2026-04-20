@@ -560,3 +560,37 @@ footer p {
         gap: 15px;
     }
 }
+
+/* Product detail page styles */
+.product-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image-container {
+    margin: 30px 0;
+}
+
+.product-large-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .product-large-image {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-large-image {
+        max-height: 300px;
+    }
+}
