@@ -87,20 +87,105 @@ async function loadProductData() {
 function displayProduct(product) {
     const contentDiv = document.querySelector('.content');
     
-    // The image_path already includes "assets/", so we just need "../" prefix
-    const imagePath = "../" + product.image_path;
+    // Create array of all images: main image + slide images
+    const allImages = [product.image_path];
+    if (product.image_slide && product.path) {
+        product.image_slide.forEach(slideImage => {
+            allImages.push(product.path + slideImage);
+        });
+    }
+    
+    // Add "../" prefix to all paths
+    const imagePaths = allImages.map(path => "../" + path);
     
     contentDiv.innerHTML = `
         <div class="product-detail">
             <h1>${product.title}</h1>
             <div class="product-image-container">
-                <img src="${imagePath}" alt="${product.title}" class="product-large-image">
+                <div class="image-slider">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                    <div class="slider-container">
+                        ${imagePaths.map((path, index) => `
+                            <img src="${path}" alt="${product.title}" class="slider-image ${index === 0 ? 'active' : ''}" data-index="${index}">
+                        `).join('')}
+                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+                </div>
             </div>
         </div>
     `;
+    
+    // Initialize slider
+    initSlider();
 }
 
 // Initialize product page
 if (window.location.pathname.includes('producto_feria.html')) {
     document.addEventListener('DOMContentLoaded', loadProductData);
+}
+
+// Slider functionality
+let currentSlide = 0;
+let sliderInterval;
+
+function initSlider() {
+    const images = document.querySelectorAll('.slider-image');
+    if (images.length > 1) {
+        // Auto-slide every 5 seconds
+        sliderInterval = setInterval(() => changeSlide(1), 5000);
+        
+        // Add swipe functionality for mobile
+        const sliderContainer = document.querySelector('.slider-container');
+        if (sliderContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            sliderContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            sliderContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left - next slide
+                        changeSlide(1);
+                    } else {
+                        // Swipe right - previous slide
+                        changeSlide(-1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+function changeSlide(direction) {
+    const images = document.querySelectorAll('.slider-image');
+    if (images.length === 0) return;
+    
+    // Remove active class from current image
+    images[currentSlide].classList.remove('active');
+    
+    // Calculate new slide index
+    currentSlide += direction;
+    if (currentSlide >= images.length) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = images.length - 1;
+    }
+    
+    // Add active class to new image
+    images[currentSlide].classList.add('active');
+    
+    // Reset auto-slide timer
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => changeSlide(1), 5000);
 }

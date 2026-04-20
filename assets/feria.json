@@ -2,7 +2,9 @@
   {
     "id": 1,
     "title": "Body Alis",
-    "image_path": "assets/images/ventas/body_alis.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/body_alis.jpeg",
+    "image_slide": ["body_alis2.jpeg", "body_alis3.jpeg", "body_alis4.jpeg"]
   },
   {
     "id": 2,
