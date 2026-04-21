@@ -8,37 +8,51 @@
   },
   {
     "id": 2,
+    "path": "assets/images/ventas/",
     "title": "Camisa oversize BILLABONG",
-    "image_path": "assets/images/ventas/camisa_billabong.jpeg"
+    "image_path": "assets/images/ventas/camisa_billabong.jpeg",
+    "image_slide": ["camisa_billabong2.jpeg"]
   },
   {
     "id": 3,
     "title": "Camisaco BILLABONG",
-    "image_path": "assets/images/ventas/camisaco_billabong.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/camisaco_billabong.jpeg",
+    "image_slide": ["camisaco_billabong2.jpeg", "camisaco_billabong3.jpeg"]
   },
   {
     "id": 4,
     "title": "Mono marrón",
-    "image_path": "assets/images/ventas/mono_marron.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/mono_marron.jpeg",
+    "image_slide": ["mono_marron2.jpeg"]
   },
   {
     "id": 5,
     "title": "Musculosa hilo",
-    "image_path": "assets/images/ventas/musculosa_hilo.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/musculosa_hilo.jpeg",
+    "image_slide": ["musculosa_hilo2.jpeg"]
   },
   {
     "id": 6,
     "title": "Remera animal print",
-    "image_path": "assets/images/ventas/remera_animal_print.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/remera_animal_print.jpeg",
+    "image_slide": ["remera_animal_print2.jpeg"]
   },
   {
     "id": 7,
     "title": "Sweater",
-    "image_path": "assets/images/ventas/sweater.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/sweater.jpeg",
+    "image_slide": ["sweater2.jpeg", "sweater3.jpeg"]
   },
   {
     "id": 8,
     "title": "Sweater liviano H&M",
-    "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg"
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg",
+    "image_slide": ["sweater_liviano_hm2.jpeg", "sweater_liviano_hm3.jpeg"]
   }
 ]
