@@ -681,3 +681,31 @@ footer p {
         max-height: 300px;
     }
 }
+
+/* Slider Dots Styles */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot:hover {
+    background-color: #FF69B4;
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background-color: #FF69B4;
+    transform: scale(1.3);
+}

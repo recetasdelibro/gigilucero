@@ -110,6 +110,11 @@ function displayProduct(product) {
                         `).join('')}
                     </div>
                     <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+                    <div class="slider-dots">
+                        ${imagePaths.map((_, index) => `
+                            <span class="dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></span>
+                        `).join('')}
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,7 +190,42 @@ function changeSlide(direction) {
     // Add active class to new image
     images[currentSlide].classList.add('active');
     
+    // Update dots
+    updateDots();
+    
     // Reset auto-slide timer
     clearInterval(sliderInterval);
     sliderInterval = setInterval(() => changeSlide(1), 5000);
+}
+
+function goToSlide(index) {
+    const images = document.querySelectorAll('.slider-image');
+    if (images.length === 0) return;
+    
+    // Remove active class from current image
+    images[currentSlide].classList.remove('active');
+    
+    // Set new slide index
+    currentSlide = index;
+    
+    // Add active class to new image
+    images[currentSlide].classList.add('active');
+    
+    // Update dots
+    updateDots();
+    
+    // Reset auto-slide timer
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => changeSlide(1), 5000);
+}
+
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
 }
