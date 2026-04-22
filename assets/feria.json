@@ -4,55 +4,70 @@
     "title": "Body Alis",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/body_alis.jpeg",
-    "image_slide": ["body_alis2.jpeg", "body_alis3.jpeg", "body_alis4.jpeg"]
+    "image_slide": ["body_alis2.jpeg", "body_alis3.jpeg", "body_alis4.jpeg"],
+    "size": "L",
+    "price": 30000
   },
   {
     "id": 2,
     "path": "assets/images/ventas/",
     "title": "Camisa oversize BILLABONG",
     "image_path": "assets/images/ventas/camisa_billabong.jpeg",
-    "image_slide": ["camisa_billabong2.jpeg"]
+    "image_slide": ["camisa_billabong2.jpeg"],
+    "size": "M",
+    "price": 45000
   },
   {
     "id": 3,
     "title": "Camisaco BILLABONG",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/camisaco_billabong.jpeg",
-    "image_slide": ["camisaco_billabong2.jpeg", "camisaco_billabong3.jpeg"]
+    "image_slide": ["camisaco_billabong2.jpeg", "camisaco_billabong3.jpeg"],
+    "size": "M",
+    "price": 40000
   },
   {
     "id": 4,
     "title": "Mono marrón",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/mono_marron.jpeg",
-    "image_slide": ["mono_marron2.jpeg"]
+    "image_slide": ["mono_marron2.jpeg"],
+    "size": "M",
+    "price": 5000
   },
   {
     "id": 5,
     "title": "Musculosa hilo",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/musculosa_hilo.jpeg",
-    "image_slide": ["musculosa_hilo2.jpeg"]
+    "image_slide": ["musculosa_hilo2.jpeg"],
+    "size": "M",
+    "price": 5500
   },
   {
     "id": 6,
     "title": "Remera animal print",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/remera_animal_print.jpeg",
-    "image_slide": ["remera_animal_print2.jpeg"]
+    "image_slide": ["remera_animal_print2.jpeg"],
+    "price": 5000
   },
   {
     "id": 7,
     "title": "Sweater",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/sweater.jpeg",
-    "image_slide": ["sweater2.jpeg", "sweater3.jpeg"]
+    "image_slide": ["sweater2.jpeg", "sweater3.jpeg"],
+    "size": "M/L",
+    "price": 7500
   },
   {
     "id": 8,
     "title": "Sweater liviano H&M",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg",
-    "image_slide": ["sweater_liviano_hm2.jpeg", "sweater_liviano_hm3.jpeg"]
+    "image_slide": ["sweater_liviano_hm2.jpeg", "sweater_liviano_hm3.jpeg"],
+    "size": "S",
+    "price": 30000
   }
 ]

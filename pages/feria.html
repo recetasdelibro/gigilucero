@@ -66,6 +66,10 @@ async function loadProducts() {
                     <img src="../${product.image_path}" alt="${product.title}">
                 </a>
                 <h3>${product.title}</h3>
+                <div class="product-info">
+                    ${product.size ? `<span class="product-size">talle ${product.size}</span>` : ''}
+                    <p class="product-price">$${product.price.toLocaleString()}</p>
+                </div>
             `;
             
             productsGrid.appendChild(productItem);
