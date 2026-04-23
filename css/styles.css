@@ -28,24 +28,29 @@ body {
     letter-spacing: 2px;
 }
 
-/* Menu Toggle */
-.menu-toggle {
+/* Header Links */
+.header-links {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 5px;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 3px 0;
-    transition: 0.3s;
+.header-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #FF69B4;
+}
+
+.header-link-divider {
+    color: #999;
+    font-size: 16px;
 }
 
 /* Navigation Menu */
@@ -267,10 +272,13 @@ body {
         min-height: 80px;
     }
     
-    /* Improve touch targets */
-    .menu-toggle {
+    /* Improve touch targets for header links */
+    .header-link {
         min-width: 44px;
         min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     /* Fix for mobile scrolling */
@@ -295,6 +303,21 @@ body {
 @media (min-width: 768px) {
     .nav-menu {
         width: 25%;
+    }
+}
+
+/* Mobile Styles for Header Links */
+@media (max-width: 767px) {
+    .header-links {
+        gap: 10px;
+    }
+    
+    .header-link {
+        font-size: 14px;
+    }
+    
+    .header-link-divider {
+        font-size: 14px;
     }
 }
 
