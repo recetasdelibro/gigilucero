@@ -117,6 +117,10 @@ function displayProduct(product) {
                     </div>
                 </div>
             </div>
+            <div class="product-info">
+                <span class="product-size">${product.size ? 'talle ' + product.size : ''}</span>
+                <p class="product-price">$${product.price.toLocaleString()}</p>
+            </div>
         </div>
     `;
     

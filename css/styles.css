@@ -572,13 +572,13 @@ footer p {
 }
 
 .product-size {
-    font-size: 14px;
+    font-size: 24px;
     color: #666;
     font-weight: 500;
 }
 
 .product-price {
-    font-size: 14px;
+    font-size: 28px;
     color: #333;
     font-weight: 600;
     margin: 0;
