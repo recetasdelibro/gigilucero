@@ -584,6 +584,31 @@ footer p {
     margin: 0;
 }
 
+.product-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.comprar-btn {
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+    padding: 15px 40px;
+    box-sizing: border-box;
+}
+
+.comprar-btn:hover {
+    border-color: #FF69B4;
+    background-color: #fff5f8;
+    color: #FF69B4;
+}
+
 /* Mobile Responsive for Products Grid */
 @media (max-width: 767px) {
     .products-grid {

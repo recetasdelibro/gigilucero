@@ -121,6 +121,9 @@ function displayProduct(product) {
                 <span class="product-size">${product.size ? 'talle ' + product.size : ''}</span>
                 <p class="product-price">$${product.price.toLocaleString()}</p>
             </div>
+            <div class="product-action">
+                <button class="comprar-btn" onclick="handleComprar()">Comprar</button>
+            </div>
         </div>
     `;
     
@@ -131,6 +134,11 @@ function displayProduct(product) {
 // Initialize product page
 if (window.location.pathname.includes('producto_feria.html')) {
     document.addEventListener('DOMContentLoaded', loadProductData);
+}
+
+// Handle comprar button click
+function handleComprar() {
+    console.log('Comprar button clicked');
 }
 
 // Slider functionality
