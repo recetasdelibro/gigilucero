@@ -337,14 +337,6 @@ body {
     margin-top: 30px;
 }
 
-.social-item:first-child {
-    margin-bottom: -5px;
-}
-
-.social-item:nth-child(2) {
-    margin-top: -5px;
-}
-
 .social-item {
     display: flex;
     align-items: center;
@@ -373,12 +365,6 @@ body {
     line-height: 1;
     display: flex;
     align-items: center;
-}
-
-/* Make Email icon specifically bigger */
-.social-item:first-child .social-icon {
-    width: 60px;
-    height: 60px;
 }
 
 .icon-image {
