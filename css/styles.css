@@ -758,3 +758,32 @@ footer p {
 .feria-page .product-price {
     font-size: 16px;
 }
+
+/* Coupon page styles */
+.coupon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.coupon-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.coupon-image:hover {
+    transform: scale(1.05);
+}
+
+.coupon-description {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 400px;
+}
