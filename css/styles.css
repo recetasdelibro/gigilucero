@@ -766,6 +766,11 @@ footer p {
     align-items: center;
     gap: 15px;
     margin-top: 30px;
+    text-align: center;
+}
+
+.coupon-item a {
+    display: block;
 }
 
 .coupon-image {
@@ -786,4 +791,16 @@ footer p {
     line-height: 1.6;
     color: #333;
     max-width: 400px;
+}
+
+/* Mobile responsive for coupon page */
+@media (max-width: 767px) {
+    .coupon-image {
+        max-width: 90%;
+    }
+    
+    .coupon-description {
+        max-width: 90%;
+        font-size: 14px;
+    }
 }
