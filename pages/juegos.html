@@ -33,7 +33,12 @@
     
     <!-- Content -->
     <div class="content">
-        <h1>PRÓXIMAMENTE</h1>
+        <h1>JUEGOS IMPRIMIBLES</h1>
+        
+        <!-- Products Grid -->
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be loaded here dynamically -->
+        </div>
     </div>
     
     <!-- Footer -->
@@ -42,5 +47,35 @@
     </footer>
     
     <script src="../js/script.js"></script>
+<script>
+// Load products from juegos.json
+async function loadProducts() {
+    try {
+        const response = await fetch('../assets/juegos.json');
+        const products = await response.json();
+        
+        const productsGrid = document.getElementById('productsGrid');
+        
+        products.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+            
+            productItem.innerHTML = `
+                <img src="../${product.image_path}" alt="${product.title}">
+                <h3><b>${product.title}</b></h3>
+                <p class="product-description">${product.desciption}</p>
+                <p class="product-price">$${product.price.toLocaleString()}</p>
+            `;
+            
+            productsGrid.appendChild(productItem);
+        });
+    } catch (error) {
+        console.error('Error loading products:', error);
+    }
+}
+
+// Load products when page loads
+document.addEventListener('DOMContentLoaded', loadProducts);
+</script>
 </body>
 </html>

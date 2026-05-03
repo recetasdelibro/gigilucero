@@ -1,24 +1,6 @@
 [
   {
     "id": 1,
-    "title": "Body Alis",
-    "path": "assets/images/ventas/",
-    "image_path": "assets/images/ventas/body_alis.jpeg",
-    "image_slide": ["body_alis2.jpeg", "body_alis3.jpeg", "body_alis4.jpeg"],
-    "size": "L",
-    "price": 30000
-  },
-  {
-    "id": 2,
-    "path": "assets/images/ventas/",
-    "title": "Camisa oversize BILLABONG",
-    "image_path": "assets/images/ventas/camisa_billabong.jpeg",
-    "image_slide": ["camisa_billabong2.jpeg"],
-    "size": "M",
-    "price": 45000
-  },
-  {
-    "id": 3,
     "title": "Camisaco BILLABONG",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/camisaco_billabong.jpeg",
@@ -27,7 +9,34 @@
     "price": 40000
   },
   {
+    "id": 2,
+    "title": "Sweater liviano H&M",
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg",
+    "image_slide": ["sweater_liviano_hm2.jpeg", "sweater_liviano_hm3.jpeg"],
+    "size": "S",
+    "price": 30000
+  },
+  {
+    "id": 3,
+    "title": "Body Adidas equipment",
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/body_adidas.jpeg",
+    "image_slide": ["body_adidas2.jpeg", "body_adidas3.jpeg"],
+    "size": "M",
+    "price": 50000
+  },
+  {
     "id": 4,
+    "title": "Body Alis",
+    "path": "assets/images/ventas/",
+    "image_path": "assets/images/ventas/body_alis.jpeg",
+    "image_slide": ["body_alis2.jpeg", "body_alis3.jpeg", "body_alis4.jpeg"],
+    "size": "L",
+    "price": 30000
+  },
+  {
+    "id": 5,
     "title": "Mono marrón",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/mono_marron.jpeg",
@@ -36,7 +45,7 @@
     "price": 5000
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Musculosa hilo",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/musculosa_hilo.jpeg",
@@ -45,7 +54,7 @@
     "price": 5500
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Remera animal print",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/remera_animal_print.jpeg",
@@ -53,7 +62,7 @@
     "price": 5000
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Sweater",
     "path": "assets/images/ventas/",
     "image_path": "assets/images/ventas/sweater.jpeg",
@@ -62,12 +71,21 @@
     "price": 7500
   },
   {
-    "id": 8,
-    "title": "Sweater liviano H&M",
+    "id": 9,
     "path": "assets/images/ventas/",
-    "image_path": "assets/images/ventas/sweater_liviano_hm.jpeg",
-    "image_slide": ["sweater_liviano_hm2.jpeg", "sweater_liviano_hm3.jpeg"],
-    "size": "S",
-    "price": 30000
+    "title": "Camisa oversize BILLABONG",
+    "image_path": "assets/images/ventas/camisa_billabong.jpeg",
+    "image_slide": ["camisa_billabong2.jpeg"],
+    "size": "M",
+    "price": 45000
+  },
+  {
+    "id": 10,
+    "path": "assets/images/ventas/",
+    "title": "Jean chupín Jazmín Chebar",
+    "image_path": "assets/images/ventas/jean_chupin_jazmin_chebar.jpeg",
+    "image_slide": ["jean_chupin_jazmin_chebar2.jpeg","jean_chupin_jazmin_chebar3.jpeg"],
+    "size": "36",
+    "price": 40000
   }
 ]

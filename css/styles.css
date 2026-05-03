@@ -534,6 +534,14 @@ footer p {
     color: #333;
 }
 
+.product-description {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+    margin: 5px 0;
+    text-align: center;
+}
+
 .product-info {
     display: flex;
     justify-content: center;
@@ -761,16 +769,38 @@ footer p {
 
 /* Coupon page styles */
 .coupon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    width: 100%;
+    max-width: 300px;
     margin-top: 30px;
-    text-align: center;
 }
 
-.coupon-item a {
-    display: block;
+.coupon-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 20px 15px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.coupon-label:hover {
+    border-color: #FF69B4;
+    background-color: #fff5f8;
+    color: #FF69B4;
+}
+
+.coupon-icon-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .coupon-image {
@@ -795,12 +825,33 @@ footer p {
 
 /* Mobile responsive for coupon page */
 @media (max-width: 767px) {
+    .coupon-label {
+        gap: 10px;
+        font-size: 16px;
+        padding: 15px 12px;
+    }
+
+    .coupon-icon-image {
+        width: 80px;
+        height: 80px;
+    }
+
     .coupon-image {
         max-width: 90%;
     }
-    
+
     .coupon-description {
         max-width: 90%;
         font-size: 14px;
     }
+}
+
+/* Promo text for Mercado Libre page */
+.promo-text {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    font-family: cursive;
+    color: #333;
+    margin-bottom: 20px;
 }
