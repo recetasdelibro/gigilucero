@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Camisaco BILLABONG",
     "path": "assets/images/ventas/",
-    "image_path": "assets/images/ventas/camisaco_billabong.jpeg",
-    "image_slide": ["camisaco_billabong2.jpeg", "camisaco_billabong3.jpeg"],
+    "title": "Camisa oversize BILLABONG",
+    "image_path": "assets/images/ventas/camisa_billabong.jpeg",
+    "image_slide": ["camisa_billabong2.jpeg"],
     "size": "M",
-    "price": 40000
+    "price": 45000
   },
   {
     "id": 2,
@@ -72,12 +72,12 @@
   },
   {
     "id": 9,
+    "title": "Camisaco BILLABONG",
     "path": "assets/images/ventas/",
-    "title": "Camisa oversize BILLABONG",
-    "image_path": "assets/images/ventas/camisa_billabong.jpeg",
-    "image_slide": ["camisa_billabong2.jpeg"],
+    "image_path": "assets/images/ventas/camisaco_billabong.jpeg",
+    "image_slide": ["camisaco_billabong2.jpeg", "camisaco_billabong3.jpeg"],
     "size": "M",
-    "price": 45000
+    "price": 40000
   },
   {
     "id": 10,
