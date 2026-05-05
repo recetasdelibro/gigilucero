@@ -65,6 +65,9 @@ async function loadProducts() {
                 <h3><b>${product.title}</b></h3>
                 <p class="product-description">${product.description}</p>
                 <p class="product-price">$${product.price.toLocaleString()}</p>
+                <div class="product-action">
+                    <button class="comprar-btn" onclick="handleComprar()">Comprar</button>
+                </div>
             `;
             
             productsGrid.appendChild(productItem);

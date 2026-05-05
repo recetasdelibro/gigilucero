@@ -138,7 +138,7 @@ if (window.location.pathname.includes('producto_feria.html')) {
 
 // Handle comprar button click
 function handleComprar() {
-    console.log('Comprar button clicked');
+    window.open('https://wa.me/541176405818?text=%C2%A1Hola%20%F0%9F%92%98%20me%20interesa%20comprar!%20', '_blank');
 }
 
 // Slider functionality
