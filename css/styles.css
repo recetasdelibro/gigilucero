@@ -767,6 +767,59 @@ footer p {
     font-size: 16px;
 }
 
+/* Filter buttons styles */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover {
+    border-color: #FF69B4;
+    background-color: #fff5f8;
+    color: #FF69B4;
+}
+
+.filter-btn.active {
+    background-color: #FF69B4;
+    border-color: #FF69B4;
+    color: white;
+}
+
+.filter-btn.active:hover {
+    background-color: #ff1493;
+    border-color: #ff1493;
+}
+
+/* Mobile responsive for filter buttons */
+@media (max-width: 767px) {
+    .filter-container {
+        gap: 8px;
+        margin: 15px 0;
+    }
+    
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
 /* Coupon page styles */
 .coupon-item {
     width: 100%;

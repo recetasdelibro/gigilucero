@@ -35,6 +35,13 @@
     <div class="content">
         <h1>FERIA GIGI</h1>
         
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="nuevo">Nuevo</button>
+            <button class="filter-btn" data-filter="usado">Usado</button>
+        </div>
+        
         <!-- Products Grid -->
         <div id="productsGrid" class="products-grid">
             <!-- Products will be loaded here dynamically -->
@@ -49,34 +56,76 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="../js/script.js"></script>
 <script>
+let allProducts = [];
+
 // Load products from feria.json
 async function loadProducts() {
     try {
         const response = await fetch('../assets/feria.json');
-        const products = await response.json();
+        allProducts = await response.json();
         
-        const productsGrid = document.getElementById('productsGrid');
-        
-        products.forEach(product => {
-            const productItem = document.createElement('div');
-            productItem.className = 'product-item';
-            
-            productItem.innerHTML = `
-                <a href="producto_feria.html?id=${product.id}">
-                    <img src="../${product.image_path}" alt="${product.title}">
-                </a>
-                <h3>${product.title}</h3>
-                <div class="product-info">
-                    ${product.size ? `<span class="product-size">talle ${product.size}</span>` : ''}
-                    <p class="product-price">$${product.price.toLocaleString()}</p>
-                </div>
-            `;
-            
-            productsGrid.appendChild(productItem);
-        });
+        displayProducts(allProducts);
+        setupFilterButtons();
     } catch (error) {
         console.error('Error loading products:', error);
     }
+}
+
+// Display products in the grid
+function displayProducts(products) {
+    const productsGrid = document.getElementById('productsGrid');
+    productsGrid.innerHTML = '';
+    
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.dataset.status = product.status || 'nuevo';
+        
+        productItem.innerHTML = `
+            <a href="producto_feria.html?id=${product.id}">
+                <img src="../${product.image_path}" alt="${product.title}">
+            </a>
+            <h3>${product.title}</h3>
+            <div class="product-info">
+                ${product.size ? `<span class="product-size">talle ${product.size}</span>` : ''}
+                <p class="product-price">$${product.price.toLocaleString()}</p>
+            </div>
+        `;
+        
+        productsGrid.appendChild(productItem);
+    });
+}
+
+// Setup filter button event listeners
+function setupFilterButtons() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.dataset.filter;
+            filterProducts(filterValue);
+        });
+    });
+}
+
+// Filter products based on selected status
+function filterProducts(filterValue) {
+    let filteredProducts;
+    
+    if (filterValue === 'all') {
+        filteredProducts = allProducts;
+    } else {
+        filteredProducts = allProducts.filter(product => 
+            (product.status || 'nuevo') === filterValue
+        );
+    }
+    
+    displayProducts(filteredProducts);
 }
 
 // Load products when page loads
