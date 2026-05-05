@@ -140,18 +140,9 @@ if (window.location.pathname.includes('producto_feria.html')) {
 function handleComprar() {
     const message = encodeURIComponent('¡Hola 💘 me interesa comprar!');
     const phoneNumber = '541176405818';
-    
-    // Try to open WhatsApp app first, fallback to web if app not available
-    const whatsappAppUrl = `whatsapp://send?phone=${phoneNumber}&text=${message}`;
     const whatsappWebUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
-    // Try app first, then fallback to web
-    window.location.href = whatsappAppUrl;
-    
-    // Fallback to web if app doesn't open (delayed)
-    setTimeout(() => {
-        window.open(whatsappWebUrl, '_blank');
-    }, 1000);
+    window.open(whatsappWebUrl, '_blank');
 }
 
 // Slider functionality
