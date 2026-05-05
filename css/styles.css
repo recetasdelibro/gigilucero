@@ -912,4 +912,13 @@ footer p {
     font-style: italic;
     color: #333;
     margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+/* Mobile responsive for promo text */
+@media (max-width: 767px) {
+    .promo-text {
+        font-size: 16px;
+        white-space: nowrap;
+    }
 }
