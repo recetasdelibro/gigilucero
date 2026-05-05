@@ -919,6 +919,7 @@ footer p {
 @media (max-width: 767px) {
     .promo-text {
         font-size: 16px;
-        white-space: nowrap;
+        white-space: normal;
+        line-height: 1.3;
     }
 }
